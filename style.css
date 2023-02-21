@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root{
+    --primary-color: #3E54AC;
+    --primary-color-dark: #3E54AC;
+    --secondary-color: #3E54AC;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --extra-light: #EEEEEE;
+
+    --max-width: 1080px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 9;
+}
+
+.nav__content{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo a {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    transition: 0.3ms;
+}
+
+nav .logo a:hover {
+    color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+    display: none;
+}
+
+nav input {
+    display: none;
+}
+
+nav .checkbox i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+
+ul li a {
+    padding: .5rem 1rem;
+    border: 2px solid transparent;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+ul li a:hover,
+ul li a.active {
+    border-top-color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.section {
+    background-color: var(--extra-light);
+}
+
+.section__container {
+    min-height: 100vh;
+    min-height: 100svh;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+}
+
+.section__container .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.subtitle {
+    letter-spacing: 2px;
+    color: var(--extra-light);
+    font-weight: 600;
+}
+
+.title {
+   font-size: 2rem; 
+   font-weight: 400;
+   color: var(--text-dark);
+}
+
+.title span {
+    font-weight: 700;
+}
+
+.description {
+    line-height: 1.5rem;
+    color: var(--text-light);
+}
+
+.action__btns button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.action__btns .hire__me {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.action__btns .hire__me:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.action__btns .portfolio {
+    color: var(--primary-color);
+}
+
+.action__btns .portfolio:hover {
+    background-color: var(--primary-color-dark);
+    color: #ffffff;
+}
+
+.section__container .image {
+    flex: 1;
+    display: grid;
+    place-items: center;
+}
+
+.section__container .image img {
+    width: min(25rem, 90%);
+    border-radius: 100%;
+}
+
+
+@media screen and (width < 750px) {
+    nav .checkbox {
+        display: block;
+    }
+
+    ul {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        height: calc(100svh - 85px);
+        left: -100%;
+        top: 80px;
+        background-color: var(--extra-light);
+        flex-direction: column;
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    nav #check:checked ~ ul{
+        left: 0;
+    }
+
+    ul li a {
+        font-size: 1.5rem;
+    }
+
+    .section__container {
+        padding: 8rem 1rem;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .action__btns {
+        margin: auto;
+    }
+}
